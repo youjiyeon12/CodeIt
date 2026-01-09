@@ -1,3 +1,40 @@
+.board {
+    padding: 16px;
+    border-radius: 32px;
+    background-color: #272d3a;
+}
+
+.diceContainer {
+    border-radius: 16px;
+    background-color: #1d222c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .title {
     font-size: 24px;
+    margin: 32px 0;
+}
+
+.totalScore {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.score {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.gameHistory {
+    border-radius: 16px;
+    background-color: #323949;
+    padding: 16px;
+    font-size: 15px;
+    min-height: 51px;
+}
+
+.loser {
+    opacity: 0.5;
 }

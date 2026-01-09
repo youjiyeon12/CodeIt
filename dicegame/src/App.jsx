@@ -17,7 +17,7 @@ function App() {
   const [otherHistory, setOtherHistory] = useState([]);
 
   // 던지기
-  const handleRollClick = () => {    
+  const handleRollClick = () => {
     const nextMyNum = random(6);
     const nextOtherNum = random(6);
     // setNum(nextMyNum);
@@ -27,10 +27,10 @@ function App() {
     // setOtherNum(nextOtherNum);
     // setOtherSum(otherSum + nextOtherNum);
     setOtherHistory([...otherHistory, nextOtherNum])
-  }; 
+  };
 
   // 처음부터
-  const handleclearClick = () =>{
+  const handleclearClick = () => {
     // setNum(1);  
     // setSum(0);
     setMyHistory([]);
@@ -39,38 +39,38 @@ function App() {
     setOtherHistory([]);
   };
 
-  const myNum = myHistory[myHistory.length-1] || 1; 
-  const otherNum = otherHistory[otherHistory.length-1] || 1; 
+  const myNum = myHistory[myHistory.length - 1] || 1;
+  const otherNum = otherHistory[otherHistory.length - 1] || 1;
 
   return (
     <div className={styles.main}>
       <div className={styles.header}>
         <h1 className={styles.appTitle}>주사위 게임</h1>
-        <Button color = "purple" onClick={handleRollClick}>던지기</Button>
+        <Button color="purple" onClick={handleRollClick}>던지기</Button>
       </div>
-      <hr className={styles.divider}/>
+      <hr className={styles.divider} />
       <h2 className={styles.subtitle}>경기결과</h2>
 
       <div className={styles.boards}>
         <Board
-          name="나" 
-          color="purple" 
+          name="나"
+          color="purple"
           // num={num} 
           // sum={sum} 
-          gameHistory={myHistory} 
+          gameHistory={myHistory}
           isLoser={myNum < otherNum}
         />
         <Board
-          name="상대" 
-          color="red" 
+          name="상대"
+          color="red"
           // num={otherNum} 
           // sum={otherSum} 
-          gameHistory={otherHistory} 
+          gameHistory={otherHistory}
           isLoser={otherNum < myNum}
         />
       </div>
       <div className={styles.resetButton}>
-        <Button color = "navy" onClick={handleclearClick}>처음부터</Button>
+        <Button color="navy" onClick={handleclearClick}>처음부터</Button>
       </div>
     </div>
   );
